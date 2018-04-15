@@ -29,7 +29,31 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="<?php echo base_url();?>assets/admin/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/admin/css/pe-icon-7-stroke.css" rel="stylesheet"/>
+
+    <style>
+        th.sort.asc:after{
+            content: "\f0de";
+            font-family: FontAwesome;
+            position: absolute;
+            margin-left: 10px;
+        }
+
+        th.sort.desc:after{
+            content: "\f0d7";
+            font-family: FontAwesome;
+            position: absolute;
+            margin-left: 10px;
+        }
+
+        th.sort:after{
+            content: "\f0dc";
+            font-family: FontAwesome;
+            position: absolute;
+            margin-left: 10px;
+
+        }
+    </style>
 </head>
 <body>
 
@@ -154,6 +178,5 @@
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url();?>assets/admin/js/demo.js"></script>
-
 
 </html>

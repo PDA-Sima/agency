@@ -16,7 +16,7 @@
                 </div>
                 <div class ="col-md-12">
                     <button class="btn btn-primary btn-large">Uložiť</button>
-                    <button class="btn btn-info btn-large"><a href="<?php echo base_url();?>Admin/Lektori">Späť</a></button>
+                    <a href="<?php echo base_url();?>Admin/Lektori" class="btn btn">Späť</a>
                 </div>
             </div>
         </form>

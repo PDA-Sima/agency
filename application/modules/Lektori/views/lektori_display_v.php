@@ -5,14 +5,15 @@
     </div>
 </div>
 
+<div id="table_lektori">
 <div class="row">
     <div class="col-md-12">
         <table class="table table-stripped table-bordered">
             <thead>
-            <th>#</th>
-            <th>Lektori</th>
+            <th class="sort" data-sort="ID">ID</th>
+            <th class="sort" data-sort="Lektori">Lektori</th>
             </thead>
-            <tbody>
+            <tbody class="list">
             <?php
             if($lektori_table !== ""){
                 echo $lektori_table;
@@ -25,6 +26,17 @@
             <?php } ?>
             </tbody>
         </table>
-        <?php echo $this->pagination->create_links(); ?>
+        <p>Strana: <?php echo $this->pagination->create_links(); ?></p>
     </div>
 </div>
+</div>
+
+<script src="<?php echo base_url();?>assets/admin/js/list.min.js"></script>
+<script type="text/javascript">
+var options = {
+valueNames: [ 'ID', 'Lektori' ]
+};
+
+var Lektors = new List('table_lektori', options);
+
+</script>
