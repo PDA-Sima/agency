@@ -72,7 +72,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="<?php base_url(); ?>Prehľad">
+                    <a href="<?php base_url(); ?>Home">
                         <i class="pe-7s-graph"></i>
                         <p>Domov</p>
                     </a>

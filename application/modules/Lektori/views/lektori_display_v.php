@@ -26,7 +26,7 @@
             <?php } ?>
             </tbody>
         </table>
-        <p>Strana: <?php echo $this->pagination->create_links(); ?></p>
+        <?php echo $this->pagination->create_links(); ?>
     </div>
 </div>
 </div>

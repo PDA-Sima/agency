@@ -12,7 +12,7 @@ class Kategorie extends MY_Controller
     /*Vytvorenie tabulky a zobrazenie*/
     function display_kategorie()
     {
-        $data['page_header'] = "Kategorie";
+        $data['page_header'] = "Kategórie kurzov";
         $data['content_view'] = 'Kategorie/kategorie_display_v';
         $data['kategorie_table'] = $this->zobrazenie_kategorie();
         $this->template->call_admin_template($data);

@@ -92,7 +92,7 @@ class Lektori extends MY_Controller
     {
         $id = $this->uri->segment(3);
         $lektori = $this->M_Lektori->get_lektors($id);
-        $data['page_header'] = "Vymaž lektora";
+        $data['page_header'] = "Vymazať lektora";
         $data['content_view'] = 'Lektori/delete_lektor_v';
         $data['Lektor'] = $lektori['0']->Lektor;
         $data['id'] = $id;
@@ -123,7 +123,7 @@ class Lektori extends MY_Controller
     {
         $id = $this->uri->segment(3);
         $lektori = $this->M_Lektori->get_lektors($id);
-        $data['page_header'] = "Uprav lektora";
+        $data['page_header'] = "Upraviť lektora";
         $data['content_view'] = 'Lektori/edit_lektor_v';
         $data['Lektor'] = $lektori['0']->Lektor;
         $data['id'] = $id;
