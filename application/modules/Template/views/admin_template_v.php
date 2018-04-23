@@ -72,8 +72,8 @@
 
             <ul class="nav">
                 <li>
-                    <a href="<?php base_url(); ?>Home">
-                        <i class="pe-7s-home"></i>
+                    <a href="<?php base_url(); ?>Prehľad">
+                        <i class="pe-7s-graph"></i>
                         <p>Domov</p>
                     </a>
                 </li>
@@ -81,6 +81,12 @@
                     <a href="<?php base_url(); ?>Kurzy">
                         <i class="pe-7s-note2"></i>
                         <p>Kurzy</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php base_url(); ?>Kategorie">
+                        <i class="pe-7s-ribbon"></i>
+                        <p>Kategórie</p>
                     </a>
                 </li>
                 <li>

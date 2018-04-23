@@ -40,7 +40,7 @@ class Lektori extends MY_Controller
                 $lektori_table .= "<td class='ID'>{$counter}</td>";
                 $lektori_table .= "<td class='Lektori'>{$value->Lektor}</td>";
                 $lektori_table .= "<td>
-                 <a href='" . base_url() . "Admin/detail_lektor/{$value->idLektora}'>
+                 <a href='" . base_url() . "Lektori/detail_lektor/{$value->idLektora}'>
                     <button type = \"button\" class = \"btn btn-default btn-xs\">
                         <span class = \"glyphicon glyphicon-search\"></span>
                     </button>
@@ -52,7 +52,7 @@ class Lektori extends MY_Controller
                     </button>
                  </a>
                  
-                 <a href='" . base_url() . "Admin/delete_lektor/{$value->idLektora}'>
+                 <a href='" . base_url() . "Lektori/delete_lektor/{$value->idLektora}'>
                     <button type = \"button\" class = \"btn btn-danger btn-xs\">
                         <span class = \"glyphicon glyphicon-remove\"></span>
                     </button>

@@ -1,23 +1,21 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="<?php echo base_url(); ?>/Admin/addUcastnik" class="btn btn-primary">Pridať účastníka</a>
-        <br><br>
+        <a href="<?php echo base_url(); ?>index.php/Admin/addUcastnik" class="btn btn-primary pull-right">Pridať účastníka</a>
     </div>
 </div>
 
-<div id="table_ucastnici">
 <div class="row">
     <div class="col-md-12">
         <table class="table table-stripped table-bordered">
             <thead>
-            <th class="sort" data-sort="ID">ID</th>
-            <th class="sort" data-sort="Meno">Meno</th>
-            <th class="sort" data-sort="Priezvisko">Priezvisko</th>
-            <th class="sort" data-sort="Adresa">Adresa</th>
-            <th class="sort" data-sort="Email">Email</th>
-            <th class="sort" data-sort="Telefon">Telefon</th>
+            <th>#</th>
+            <th>Meno</th>
+            <th>Priezvisko</th>
+            <th>Adresa</th>
+            <th>Email</th>
+            <th>Telefon</th>
             </thead>
-            <tbody class="list">
+            <tbody>
             <?php
             if($ucastnici_table !== ""){
                 echo $ucastnici_table;
@@ -30,16 +28,5 @@
             <?php } ?>
             </tbody>
         </table>
-        <?php echo $this->pagination->create_links(); ?>
     </div>
 </div>
-</div>
-<script src="<?php echo base_url();?>assets/admin/js/list.min.js"></script>
-<script type="text/javascript">
-    var options = {
-        valueNames: [ 'ID', 'Meno' , 'Priezvisko', 'Adresa', 'Email', 'Telefon' ]
-    };
-
-    var Lektors = new List('table_ucastnici', options);
-
-</script>

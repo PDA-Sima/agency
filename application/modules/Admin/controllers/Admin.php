@@ -5,6 +5,7 @@ class Admin extends MY_Controller
     function __construct(){
         parent::__construct();
         $this->load->module(['kurzy']);
+        $this->load->module(['kategorie']);
         $this->load->module(['lektori']);
         $this->load->module(['ucastnici']);
         $this->load->module(['Dochadzka']);
@@ -46,6 +47,31 @@ class Admin extends MY_Controller
 
     function edit_lektor(){
         $this->lektori->edit_lektor();
+    }
+
+    /*Kategorie*/
+    function kategorie(){
+        $this->kategorie->display_kategorie();
+    }
+
+    function addKategorie(){
+        $this->kategorie->addKategorie();
+    }
+
+    function postKategorie(){
+        $this->kategorie->postKategorie();
+    }
+
+    function delete_kategorie(){
+        $this->kategorie->delete_kategorie();
+    }
+
+    function detail_kategorie(){
+        $this->kategorie->detail_kategorie();
+    }
+
+    function edit_kategorie(){
+        $this->kategorie->edit_kategorie();
     }
 
 
