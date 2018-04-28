@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="<?php echo base_url(); ?>index.php/Admin/addKurz" class="btn btn-primary pull-right">Pridať kurz</a>
+        <a href="<?php echo base_url(); ?>index.php/Admin/addKurz" class="btn btn-primary">Pridať kurz</a>
+        <br><br>
     </div>
 </div>
 
@@ -31,5 +32,16 @@
         <?php } ?>
         </tbody>
     </table>
+        <?php echo $this->pagination->create_links(); ?>
     </div>
 </div>
+
+<script src="<?php echo base_url();?>assets/admin/js/list.min.js"></script>
+<script type="text/javascript">
+    var options = {
+        valueNames: [ 'ID', 'Lektori' ]
+    };
+
+    var Lektors = new List('table_lektori', options);
+
+</script>

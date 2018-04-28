@@ -10,6 +10,11 @@ class M_Kurzy extends CI_Model {
         return $query->result();
     }
 
+    function get_kurzs($id){
+        $query = $this->db->get_where('kurzy',array('idKurzu' => $id) );
+        return $query->result();
+    }
+
     function insert_kurz($data){
         $this->db->insert('kurzy', $data);
     }

@@ -28,7 +28,9 @@
             <div class="col-md-8">
                 <div class="form-group">
                     <label>Kategória kurzu</label>
-                    <input type="text" name="Kategoria" class="form-control">
+                    <select name="idKategorie" class="form-control select2 multiple">
+                        <?php echo $kategors ?>
+                    </select>
                 </div>
             </div>
 
@@ -61,8 +63,8 @@
             </div>
 
             <div class="col-md-12">
-                    <button class="btn btn-success btn-large">Uložiť</button>
-                <button class="btn btn-info btn-large"><a href="<?php echo base_url();?>index.php/Admin/Kurzy">Späť</a></button>
+                <button class="btn btn-primary btn-large">Uložiť</button>
+                <a href="<?php echo base_url();?>Admin/Kurzy" class="btn btn">Späť</a>
             </div>
         </div>
     </div>

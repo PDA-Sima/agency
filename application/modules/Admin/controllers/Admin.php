@@ -82,6 +82,21 @@ class Admin extends MY_Controller
     function addUcastnik(){
         $this->ucastnici->addUcastnik();
     }
+    function postUcastnik(){
+        $this->ucastnici->postUcastnik();
+    }
+
+    function delete_ucastnici(){
+        $this->ucastnici->delete_ucastnici();
+    }
+
+    function detail_ucastnici(){
+        $this->ucastnici->detail_ucastnici();
+    }
+
+    function edit_ucastnici(){
+        $this->ucastnici->edit_ucastnici();
+    }
 
     /*Dochádzka*/
     function dochadzka(){
