@@ -18,7 +18,7 @@ class Kurzy extends MY_Controller {
         $this->load->library('pagination');
         $kurzy = $this->M_Kurzy->get_kurzy();
 
-        $config['base_url'] = base_url() . "/Admin/Lektori";
+        $config['base_url'] = base_url() . "/Admin/Kurzy";
         $config['total_rows'] = count($kurzy);
         $config['per_page'] = 6;
 
@@ -31,6 +31,7 @@ class Kurzy extends MY_Controller {
             foreach ($kurzy->result() as $key => $value) {
               $meno =$this->create_lektori_tabulka($value->idLektora);
               $kateg =$this->zobraz_kategorie($value->idKategorie);
+              $counter = $counter + 1;
               $kurzy_table .= "<tr>";
               $kurzy_table .= "<td>{$counter}</td>";
               $kurzy_table .= "<td>{$value->Nazov}</td>";
@@ -38,8 +39,8 @@ class Kurzy extends MY_Controller {
               $kurzy_table .= "<td>{$meno}</td>";
               $kurzy_table .= "<td>{$kateg}</td>";
               $kurzy_table .= "<td>{$value->MiestoKonania}</td>";
-              $kurzy_table .= "<td>".date("d-m-Y",strtotime($value->Zaciatok))."</td>";
-              $kurzy_table .= "<td>".date("d-m-Y",strtotime($value->Koniec))."</td>";
+              $kurzy_table .= "<td>".date("Y-m-d",strtotime($value->Zaciatok))."</td>";
+              $kurzy_table .= "<td>".date("Y-m-d",strtotime($value->Koniec))."</td>";
               $kurzy_table .= "<td>{$value->UrcenePreFirmy}</td>";
               $kurzy_table .= "<td>
                <a href='" . base_url() . "Kurzy/detail_kurzy/{$value->idKurzu}'>
@@ -92,6 +93,7 @@ class Kurzy extends MY_Controller {
         return $options;
     }
 
+
     function create_lektori_tabulka($id){
         $this->load->model('Lektori/M_Lektori');
         $lektori = $this->M_Lektori->get_lektors($id);
@@ -118,15 +120,59 @@ class Kurzy extends MY_Controller {
         return $kateg;
     }
 
-    function detail_kurzy()
-    {
+    function detail_kurzy() {
         $id = $this->uri->segment(3);
         $kurzy = $this->M_Kurzy->get_kurzs($id);
         $data['page_header'] = "Detail kurzu";
-        $data['content_view'] = 'Kurzy/detail_kurzu_v';
-        $data['meno'] = $kurzy['0']->Kurz;
+        $data['content_view'] = 'Kurzy/detail_kurz_v';
+        $data['Nazov'] = $kurzy['0']->Nazov;
+        $data['Popis'] = $kurzy['0']->Popis;
+        $data['idLektora']= $meno;
+        $data['idKategorie']= $kateg;
+        $data['MiestoKonania'] = $kurzy['0']->MiestoKonania;
+        $data['Zaciatok'] = $kurzy['0']->Zaciatok;
+        $data['Koniec'] = $kurzy['0']->Koniec;
+        $data['UrcenePreFirmy'] = $kurzy['0']->UrcenePreFirmy;
         $data['id'] = $id;
         $this->template->call_admin_template($data);
+
+     }
+
+    function edit_kurzy()
+    {
+        $id = $this->uri->segment(3);
+        $kurzy = $this->M_Kurzy->get_kurzs($id);
+        $data['lektors'] = $this->create_lectors_select();
+        $data['kategors'] = $this->create_kategorie_select();
+        $data['page_header'] = "Upraviť kurz";
+        $data['content_view'] = 'Kurzy/edit_kurzy_v';
+        $data['Nazov'] = $kurzy['0']->Nazov;
+        $data['Popis'] = $kurzy['0']->Popis;
+        $data['idLektora']=$kurzy['0']->idLektora;
+        $data['idKategorie']=$kurzy['0']->idKategorie;
+        $data['MiestoKonania'] = $kurzy['0']->MiestoKonania;
+        $data['Zaciatok'] = $kurzy['0']->Zaciatok;
+        $data['Koniec'] = $kurzy['0']->Koniec;
+        $data['UrcenePreFirmy'] = $kurzy['0']->UrcenePreFirmy;
+        $data['id'] = $id;
+        $this->template->call_admin_template($data);
+    }
+
+    function post_edit_kurzy()
+    {
+        $id = $this->input->post('ID');
+        $data = array(
+            'Nazov' => $this->input->post('Nazov'),
+            'Popis' => $this->input->post('Popis'),
+            'idLektora' => $this->input->post('idLektora'),
+            'idKategorie' => $this->input->post('idKategorie'),
+            'MiestoKonania' => $this->input->post('MiestoKonania'),
+            'Zaciatok' => $this->input->post('Zaciatok'),
+            'Koniec' => $this->input->post('Koniec'),
+            'UrcenePreFirmy' => $this->input->post('UrcenePreFirmy'),
+        );
+        $this->M_Kurzy->update_kurzy($id, $data);
+        redirect(base_url() . "Admin/Kurzy");
     }
 
 }

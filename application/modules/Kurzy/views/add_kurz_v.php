@@ -43,14 +43,14 @@
 
             <div class="col-md-8">
                 <div class="form-group">
-                    <label>Začiatok kurzu</label>
+                    <label>Začiatok kurzu (rok-mesiac-deň)</label>
                     <input type="text" name="Zaciatok" class="form-control">
                 </div>
             </div>
 
             <div class="col-md-8">
                 <div class="form-group">
-                    <label>Koniec kurzu</label>
+                    <label>Koniec kurzu (rok-mesiac-deň)</label>
                     <input type="text" name="Koniec" class="form-control">
                 </div>
             </div>

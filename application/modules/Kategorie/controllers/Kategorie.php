@@ -118,7 +118,7 @@ class Kategorie extends MY_Controller
     function edit_kategorie()
     {
         $id = $this->uri->segment(3);
-        $kategorie = $this->M_Kategorie->get_kategorie($id);
+        $kategorie = $this->M_Kategorie->get_kategor($id);
         $data['page_header'] = "Upraviť kategóriu";
         $data['content_view'] = 'Kategorie/edit_kategorie_v';
         $data['Kategoria'] = $kategorie['0']->Kategoria;

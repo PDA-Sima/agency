@@ -9,7 +9,7 @@
     <div class="col-md-12">
         <table class="table table-stripped table-bordered">
         <thead>
-            <th>#</th>
+            <th>ID</th>
             <th>Názov</th>
             <th>Popis</th>
             <th>Lektor</th>

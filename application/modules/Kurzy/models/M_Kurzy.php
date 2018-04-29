@@ -5,6 +5,11 @@ class M_Kurzy extends CI_Model {
         parent::__construct();
     }
 
+    function get_active_kurzy(){
+        $query = $this->db->get('Kurzy');
+        return $query -> result();
+    }
+
     function get_kurzy(){
         $query=$this->db->get('kurzy');
         return $query->result();
@@ -23,6 +28,17 @@ class M_Kurzy extends CI_Model {
         $this->db->insert('kurzy', $this->input->post());
     }
 
+    function delete_kurzy($id){
+        $this->db->where('idKurzu', $id);
+        $this->db->delete('kurzy');
+    }
 
+    function detail_kurzy($id){
+        $this->db->where('idKurzu', $id);
+    }
 
+    function update_kurzy($id,$data){
+        $this->db->where('idKurzu', $id);
+        $this->db->update('kurzy',$data);
+    }
 }
