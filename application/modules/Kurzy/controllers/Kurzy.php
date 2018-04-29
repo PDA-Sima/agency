@@ -33,15 +33,15 @@ class Kurzy extends MY_Controller {
               $kateg =$this->zobraz_kategorie($value->idKategorie);
               $counter = $counter + 1;
               $kurzy_table .= "<tr>";
-              $kurzy_table .= "<td>{$counter}</td>";
-              $kurzy_table .= "<td>{$value->Nazov}</td>";
-              $kurzy_table .= "<td>{$value->Popis}</td>";
-              $kurzy_table .= "<td>{$meno}</td>";
-              $kurzy_table .= "<td>{$kateg}</td>";
-              $kurzy_table .= "<td>{$value->MiestoKonania}</td>";
-              $kurzy_table .= "<td>".date("Y-m-d",strtotime($value->Zaciatok))."</td>";
-              $kurzy_table .= "<td>".date("Y-m-d",strtotime($value->Koniec))."</td>";
-              $kurzy_table .= "<td>{$value->UrcenePreFirmy}</td>";
+              $kurzy_table .= "<td td class='ID'>{$counter}</td>";
+              $kurzy_table .= "<td td class='Nazov'>{$value->Nazov}</td>";
+              $kurzy_table .= "<td td class='Popis'>{$value->Popis}</td>";
+              $kurzy_table .= "<td td class='Lektor'>{$meno}</td>";
+              $kurzy_table .= "<td td class='Kategoria'>{$kateg}</td>";
+              $kurzy_table .= "<td td class='MiestoKonania'>{$value->MiestoKonania}</td>";
+              $kurzy_table .= "<td td class='Zaciatok'>".date("Y-m-d",strtotime($value->Zaciatok))."</td>";
+              $kurzy_table .= "<td td class='Koniec'>".date("Y-m-d",strtotime($value->Koniec))."</td>";
+              $kurzy_table .= "<td td class='UrcenePreFirmy'>{$value->UrcenePreFirmy}</td>";
               $kurzy_table .= "<td>
                <a href='" . base_url() . "Kurzy/detail_kurzy/{$value->idKurzu}'>
                     <button type = \"button\" class = \"btn btn-default btn-xs\">
@@ -123,19 +123,20 @@ class Kurzy extends MY_Controller {
     function detail_kurzy() {
         $id = $this->uri->segment(3);
         $kurzy = $this->M_Kurzy->get_kurzs($id);
-        $data['page_header'] = "Detail kurzu";
-        $data['content_view'] = 'Kurzy/detail_kurz_v';
-        $data['Nazov'] = $kurzy['0']->Nazov;
-        $data['Popis'] = $kurzy['0']->Popis;
-        $data['idLektora']= $meno;
-        $data['idKategorie']= $kateg;
-        $data['MiestoKonania'] = $kurzy['0']->MiestoKonania;
-        $data['Zaciatok'] = $kurzy['0']->Zaciatok;
-        $data['Koniec'] = $kurzy['0']->Koniec;
-        $data['UrcenePreFirmy'] = $kurzy['0']->UrcenePreFirmy;
-        $data['id'] = $id;
-        $this->template->call_admin_template($data);
-
+        foreach ($kurzy as $key => $value) {
+            $data['page_header'] = "Detail kurzu";
+            $data['content_view'] = 'Kurzy/detail_kurz_v';
+            $data['Nazov'] = $kurzy['0']->Nazov;
+            $data['Popis'] = $kurzy['0']->Popis;
+            $data['meno'] = $this->create_lektori_tabulka($value->idLektora);
+            $data['kateg'] = $this->zobraz_kategorie($value->idKategorie);
+            $data['MiestoKonania'] = $kurzy['0']->MiestoKonania;
+            $data['Zaciatok'] = $kurzy['0']->Zaciatok;
+            $data['Koniec'] = $kurzy['0']->Koniec;
+            $data['UrcenePreFirmy'] = $kurzy['0']->UrcenePreFirmy;
+            $data['id'] = $id;
+            $this->template->call_admin_template($data);
+        }
      }
 
     function edit_kurzy()
@@ -175,4 +176,30 @@ class Kurzy extends MY_Controller {
         redirect(base_url() . "Admin/Kurzy");
     }
 
+    function delete_kurzy()
+    {
+        $id = $this->uri->segment(3);
+        $kurzy = $this->M_Kurzy->get_kurzs($id);
+        foreach ($kurzy as $key => $value) {
+            $data['page_header'] = "Vymazať kurz";
+            $data['content_view'] = 'Kurzy/delete_kurzy_v';
+            $data['Nazov'] = $kurzy['0']->Nazov;
+            $data['Popis'] = $kurzy['0']->Popis;
+            $data['meno'] = $this->create_lektori_tabulka($value->idLektora);
+            $data['kateg'] = $this->zobraz_kategorie($value->idKategorie);
+            $data['MiestoKonania'] = $kurzy['0']->MiestoKonania;
+            $data['Zaciatok'] = $kurzy['0']->Zaciatok;
+            $data['Koniec'] = $kurzy['0']->Koniec;
+            $data['UrcenePreFirmy'] = $kurzy['0']->UrcenePreFirmy;
+            $data['id'] = $id;
+            $this->template->call_admin_template($data);
+        }
+    }
+
+    function post_delete_kurzy()
+    {
+        $id = $this->input->post('ID');
+        $this->M_Kurzy->delete_kurzy($id);
+        redirect(base_url() . "Admin/Kurzy");
+    }
 }

@@ -1,13 +1,13 @@
 <div class="row">
     <div class ="col-md-12">
-        <form enctype="multipart/form-data">
+        <form method ="Post" action = "<?php echo base_url(); ?>Kurzy/post_delete_kurzy" enctype="multipart/form-data">
             <div class ="row">
                 <div class ="col-md-12">
                     <div class ="form-group">
                         <input type="hidden"  name ="ID" value="<?php echo $id ?>"class ="form-control">
                     </div>
                 </div>
-                <div class ="col-md-8">
+                <div class ="col-md-12">
                     <div class ="form-group">
                         <label>Názov kurzu:</label>
                         <?php echo $Nazov ?>
@@ -40,13 +40,12 @@
                         <label>Určené pre firmy:</label>
                         <?php echo $UrcenePreFirmy?>
                     </div>
-
                 </div>
-
-                <div class ="col-md-12">
-                    <a href="<?php echo base_url();?>Admin/Kurzy" class="btn btn">Späť</a>
+                    <div class ="col-md-12">
+                        <button class="btn btn-danger btn-large">Odstrániť</button>
+                        <a href="<?php echo base_url();?>Admin/Kurzy" class="btn btn">Späť</a>
+                    </div>
                 </div>
-            </div>
         </form>
     </div>
 </div>

@@ -5,21 +5,22 @@
     </div>
 </div>
 
+<div id="table_kurzy">
 <div class="row">
     <div class="col-md-12">
         <table class="table table-stripped table-bordered">
         <thead>
-            <th>ID</th>
-            <th>Názov</th>
-            <th>Popis</th>
-            <th>Lektor</th>
-            <th>Kategória</th>
-            <th>Miesto konania</th>
-            <th>Začiatok</th>
-            <th>Koniec</th>
-            <th>Pre firmy</th>
+            <th class="sort" data-sort="ID">ID</th>
+            <th class="sort" data-sort="Nazov">Názov</th>
+            <th class="sort" data-sort="Popis">Popis</th>
+            <th class="sort" data-sort="Lektor">Lektor</th>
+            <th class="sort" data-sort="Kategoria">Kategória</th>
+            <th class="sort" data-sort="MiestoKonania">Miesto konania</th>
+            <th class="sort" data-sort="Zaciatok">Začiatok</th>
+            <th class="sort" data-sort="Koniec">Koniec</th>
+            <th class="sort" data-sort="UrcenePreFirmy">Pre firmy</th>
         </thead>
-        <tbody>
+        <tbody class="list">
             <?php
                 if($kurzy_table !== ""){
                 echo $kurzy_table;
@@ -35,13 +36,14 @@
         <?php echo $this->pagination->create_links(); ?>
     </div>
 </div>
+</div>
 
 <script src="<?php echo base_url();?>assets/admin/js/list.min.js"></script>
 <script type="text/javascript">
     var options = {
-        valueNames: [ 'ID', 'Lektori' ]
+        valueNames: [ 'ID', 'Nazov', 'Popis', 'Lektor', 'Kategoria', 'MiestoKonania', 'Zaciatok', 'Koniec', 'UrcenePreFirmy' ]
     };
 
-    var Lektors = new List('table_lektori', options);
+    var Kurzy = new List('table_kurzy', options);
 
 </script>
