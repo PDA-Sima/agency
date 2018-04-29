@@ -106,6 +106,22 @@ class Admin extends MY_Controller
         $this->dochadzka->addDochadzka();
     }
 
+    function post_dochadzka(){
+        $this->dochadzka->postdochadzka();
+    }
+
+    function delete_dochadzka(){
+        $this->dochadzka->delete_dochadzka();
+    }
+
+    function detail_dochadzka(){
+        $this->dochadzka->detail_dochadzka();
+    }
+
+    function edit_dochadzka(){
+        $this->dochadzka->edit_dochadzka();
+    }
+
     /*Faktury*/
     function faktury(){
         $this->faktury->display_faktury();

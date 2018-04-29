@@ -15,12 +15,6 @@
                 </div>
                 <div class ="col-md-12">
                     <div class ="form-group">
-                        <label>Priezvisko účastníka</label>
-                        <input type="text" name ="Priezvisko" value="<?php echo $Priezvisko ?>"class ="form-control">
-                    </div>
-                </div>
-                <div class ="col-md-12">
-                    <div class ="form-group">
                         <label>Adresa</label>
                         <input type="text" name ="Adresa" value="<?php echo $Adresa ?>"class ="form-control">
                     </div>

@@ -1,34 +1,37 @@
 <div class="row">
     <div class ="col-md-12">
-        <form method ="Post" action = "<?php echo base_url(); ?>Ucastnici/post_delete_ucastnici" enctype="multipart/form-data">
+        <form enctype="multipart/form-data">
             <div class ="row">
                 <div class ="col-md-12">
                     <div class ="form-group">
                         <input type="hidden"  name ="ID" value="<?php echo $id ?>"class ="form-control">
                     </div>
                 </div>
-                <div class ="col-md-12">
+                <div class ="col-md-8">
                     <div class ="form-group">
-                        <label>Meno účastníka:</label>
-                        <?php echo $Meno ?>
+                        <label>Účastník:</label>
+                        <?php echo $ucastnik?>
                     </div>
                     <div class ="form-group">
-                        <label>Adresa:</label>
-                        <?php echo $Adresa ?>
+                        <label>Kurz:</label>
+                        <?php echo $kurz?>
                     </div>
                     <div class ="form-group">
-                        <label>Email:</label>
-                        <?php echo $Email ?>
+                        <label>Dátum:</label>
+                        <?php echo $Datum?>
                     </div>
                     <div class ="form-group">
-                        <label>Telefon:</label>
-                        <?php echo $Telefon ?>
+                        <label>Zaciatok:</label>
+                        <?php echo $Zaciatok?>
+                    </div>
+                    <div class ="form-group">
+                        <label>Koniec:</label>
+                        <?php echo $Koniec?>
                     </div>
                 </div>
 
                 <div class ="col-md-12">
-                    <button class="btn btn-danger btn-large">Odstrániť</button>
-                    <a href="<?php echo base_url();?>Admin/Ucastnici" class="btn btn">Späť</a>
+                    <a href="<?php echo base_url();?>Admin/Dochadzka" class="btn btn">Späť</a>
                 </div>
             </div>
         </form>

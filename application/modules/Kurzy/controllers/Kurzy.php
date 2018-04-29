@@ -69,7 +69,6 @@ class Kurzy extends MY_Controller {
 
     function addKurz(){
         $data['page_header'] = "Pridať kurz";
-        $data['description'] = "(vloženie nového kurzu)";
         $data['content_view'] ='Kurzy/add_kurz_v';
         $data['lektors'] = $this->create_lectors_select();
         $data['kategors'] = $this->create_kategorie_select();
@@ -77,8 +76,8 @@ class Kurzy extends MY_Controller {
     }
 
     function post_kurz(){
-        $this->M_Kurzy->post_kurz();
-        redirect(base_url() . 'Admin/Kurzy');
+        $this->M_Dochadzka->post_dochadzka();
+        redirect(base_url() . 'Admin/Dochadzka');
     }
 
     function create_lectors_select(){

@@ -8,10 +8,6 @@
                         <input type="text" name="Meno" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Pruezvisko účastníka:</label>
-                        <input type="text" name="Priezvisko" class="form-control">
-                    </div>
-                    <div class="form-group">
                         <label>Adresa:</label>
                         <input type="text" name="Adresa" class="form-control">
                     </div>

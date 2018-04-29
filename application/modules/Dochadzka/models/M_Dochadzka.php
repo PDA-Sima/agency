@@ -6,8 +6,40 @@ class M_Dochadzka extends CI_Model{
         parent::__construct();
     }
 
+    function get_active_dochadzka(){
+        $query = $this->db->get('HodinyKurzu');
+        return $query -> result();
+    }
+
     function get_dochadzka(){
         $query=$this->db->get('hodinykurzu');
         return $query->result();
+    }
+
+    function get_dochadzkas($id){
+        $query = $this->db->get_where('hodinykurzu',array('idHodiny' => $id) );
+        return $query->result();
+    }
+
+    function insert_dochadzka($data){
+        $this->db->insert('hodinykurzu', $data);
+    }
+
+    function post_dochadzka(){
+        $this->db->insert('hodinykurzu', $this->input->post());
+    }
+
+    function delete_dochadzka($id){
+        $this->db->where('idHodiny', $id);
+        $this->db->delete('hodinykurzu');
+    }
+
+    function detail_dochadzka($id){
+        $this->db->where('idHodiny', $id);
+    }
+
+    function update_dochadzka($id,$data){
+        $this->db->where('idHodiny', $id);
+        $this->db->update('hodinykurzu',$data);
     }
 }

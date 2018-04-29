@@ -36,7 +36,6 @@ class Ucastnici extends MY_Controller
             $ucastnici_table .= "<tr>";
             $ucastnici_table .= "<td td class='ID'>{$counter}</td>";
             $ucastnici_table .= "<td td class='Meno'>{$value->Meno}</td>";
-            $ucastnici_table .= "<td td class='Priezvisko'>{$value->Priezvisko}</td>";
             $ucastnici_table .= "<td td class='Adresa'>{$value->Adresa}</td>";
             $ucastnici_table .= "<td td class='Email'>{$value->Email}</td>";
             $ucastnici_table .= "<td td class='Telefon'>{$value->Telefon}</td>";
@@ -71,7 +70,6 @@ class Ucastnici extends MY_Controller
         $data['page_header'] = "Detail účastníka";
         $data['content_view'] = 'Ucastnici/detail_ucastnici_v';
         $data['Meno'] = $ucastnici['0']->Meno;
-        $data['Priezvisko'] = $ucastnici['0']->Priezvisko;
         $data['Adresa'] = $ucastnici['0']->Adresa;
         $data['Email'] = $ucastnici['0']->Email;
         $data['Telefon'] = $ucastnici['0']->Telefon;
@@ -96,7 +94,6 @@ class Ucastnici extends MY_Controller
     {
         $udaje = array(
             'Meno' => 'Meno',
-            'Priezvisko' => 'Priezvisko',
             'Adresa' => 'Adresa',
             'Email' => 'Email',
             'Telefon' => 'Telefon',
@@ -111,7 +108,6 @@ class Ucastnici extends MY_Controller
         $data['page_header'] = "Vymazať účastníka";
         $data['content_view'] = 'Ucastnici/delete_ucastnici_v';
         $data['Meno'] = $ucastnici['0']->Meno;
-        $data['Priezvisko'] = $ucastnici['0']->Priezvisko;
         $data['Adresa'] = $ucastnici['0']->Adresa;
         $data['Email'] = $ucastnici['0']->Email;
         $data['Telefon'] = $ucastnici['0']->Telefon;
@@ -130,10 +126,9 @@ class Ucastnici extends MY_Controller
     {
         $id = $this->uri->segment(3);
         $ucastnici = $this->M_Ucastnici->get_ucastnicis($id);
-        $data['page_header'] = "Upraviť účstníka";
+        $data['page_header'] = "Upraviť účastníka";
         $data['content_view'] = 'Ucastnici/edit_ucastnici_v';
         $data['Meno'] = $ucastnici['0']->Meno;
-        $data['Priezvisko'] = $ucastnici['0']->Priezvisko;
         $data['Adresa'] = $ucastnici['0']->Adresa;
         $data['Email'] = $ucastnici['0']->Email;
         $data['Telefon'] = $ucastnici['0']->Telefon;
@@ -146,7 +141,6 @@ class Ucastnici extends MY_Controller
         $id = $this->input->post('ID');
         $data = array(
             'Meno' => $this->input->post('Meno'),
-            'Priezvisko' => $this->input->post('Priezvisko'),
             'Adresa' => $this->input->post('Adresa'),
             'Email' => $this->input->post('Email'),
             'Telefon' => $this->input->post('Telefon'),

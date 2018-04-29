@@ -13,10 +13,6 @@
                         <?php echo $Meno ?>
                     </div>
                     <div class ="form-group">
-                        <label>Priezvisko účastníka:</label>
-                        <?php echo $Priezvisko?>
-                    </div>
-                    <div class ="form-group">
                         <label>Adresa:</label>
                         <?php echo $Adresa?>
                     </div>
