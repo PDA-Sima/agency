@@ -129,5 +129,19 @@ class Admin extends MY_Controller
     function addFaktura(){
         $this->faktury->addFaktura();
     }
+    function post_faktury(){
+        $this->faktury->postfaktury();
+    }
 
+    function delete_faktury(){
+        $this->faktury->delete_faktury();
+    }
+
+    function detail_faktury(){
+        $this->faktury->detail_faktury();
+    }
+
+    function edit_faktury(){
+        $this->faktury->edit_faktury();
+    }
 }

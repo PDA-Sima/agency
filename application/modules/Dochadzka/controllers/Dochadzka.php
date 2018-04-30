@@ -35,12 +35,12 @@ class Dochadzka extends MY_Controller
                 $kurz=$this->zobraz_kurz($value->idKurzu);
                 $counter = $counter + 1;
                 $dochadzka_table .= "<tr>";
-                $dochadzka_table .= "<td>{$counter}</td>";
-                $dochadzka_table .= "<td>{$ucastnik}</td>";
-                $dochadzka_table .= "<td>{$kurz}</td>";
-                $dochadzka_table .= "<td>" . date("d-m-Y", strtotime($value->Datum)) . "</td>";
-                $dochadzka_table .= "<td>{$value->Zaciatok}</td>";
-                $dochadzka_table .= "<td>{$value->Koniec}</td>";
+                $dochadzka_table .= "<td td class='ID'>{$counter}</td>";
+                $dochadzka_table .= "<td td class='Ucastnik'>{$ucastnik}</td>";
+                $dochadzka_table .= "<td td class='Kurz'>{$kurz}</td>";
+                $dochadzka_table .= "<td td class='Datum'>" . date("d-m-Y", strtotime($value->Datum)) . "</td>";
+                $dochadzka_table .= "<td td class='Zaciatok'>{$value->Zaciatok}</td>";
+                $dochadzka_table .= "<td td class='Koniec'>{$value->Koniec}</td>";
                 $dochadzka_table .= "<td>
                 <a href='" . base_url() . "Dochadzka/detail_dochadzka/{$value->idHodiny}'>
                     <button type = \"button\" class = \"btn btn-default btn-xs\">
