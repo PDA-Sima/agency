@@ -76,8 +76,8 @@ class Kurzy extends MY_Controller {
     }
 
     function post_kurz(){
-        $this->M_Dochadzka->post_dochadzka();
-        redirect(base_url() . 'Admin/Dochadzka');
+        $this->M_Kurzy->post_kurz();
+        redirect(base_url() . 'Admin/Kurzy');
     }
 
     function create_lectors_select(){

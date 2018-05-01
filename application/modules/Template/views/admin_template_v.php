@@ -36,21 +36,21 @@
             content: "\f0de";
             font-family: FontAwesome;
             position: absolute;
-            margin-left: 10px;
+            margin-left: 5px;
         }
 
         th.sort.desc:after{
             content: "\f0d7";
             font-family: FontAwesome;
             position: absolute;
-            margin-left: 10px;
+            margin-left: 5px;
         }
 
         th.sort:after{
             content: "\f0dc";
             font-family: FontAwesome;
             position: absolute;
-            margin-left: 10px;
+            margin-left: 5px;
 
         }
     </style>

@@ -10,15 +10,24 @@ class Admin extends MY_Controller
         $this->load->module(['ucastnici']);
         $this->load->module(['Dochadzka']);
         $this->load->module(['faktury']);
+        $this->load->module(['home']);
     }
 
     function index(){
         $this->template->call_admin_template();
     }
+
+    function home(){
+        $this->home->home_template();
+    }
+
+
+
     /*Kurzy*/
     function kurzy(){
         $this->kurzy->display_kurzy();
     }
+
     function addKurz(){
         $this->kurzy->addKurz();
     }

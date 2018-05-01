@@ -35,18 +35,18 @@ class Faktury extends MY_Controller
                 $kurz=$this->zobraz_kurz($value->idKurzu);
                 $counter = $counter + 1;
                 $faktury_table .= "<tr>";
-                $faktury_table .= "<td>{$counter}</td>";
-                $faktury_table .= "<td>{$value->Firma}</td>";
-                $faktury_table .= "<td>{$value->ICO}</td>";
-                $faktury_table .= "<td>{$value->DIC}</td>";
-                $faktury_table .= "<td>{$value->IC_DPH}</td>";
-                $faktury_table .= "<td>{$value->AdresaFirmy}</td>";
-                $faktury_table .= "<td>{$ucastnik}</td>";
-                $faktury_table .= "<td>{$kurz}</td>";
-                $faktury_table .= "<td>{$value->PocetHodin}</td>";
-                $faktury_table .= "<td>{$value->CenaHodiny}</td>";
-                $faktury_table .= "<td>{$value->CelkovaSuma}</td>";
-                $faktury_table .= "<td>{$value->Zaplatena}</td>";
+                $faktury_table .= "<td td class='ID'>{$counter}</td>";
+                $faktury_table .= "<td td class='Firma'>{$value->Firma}</td>";
+                $faktury_table .= "<td td class='ICO'>{$value->ICO}</td>";
+                $faktury_table .= "<td td class='DIC'>{$value->DIC}</td>";
+                $faktury_table .= "<td td class='IC_DPH'>{$value->IC_DPH}</td>";
+                $faktury_table .= "<td td class='Adresa'>{$value->AdresaFirmy}</td>";
+                $faktury_table .= "<td td class='Ucastnik'>{$ucastnik}</td>";
+                $faktury_table .= "<td td class='Kurz'>{$kurz}</td>";
+                $faktury_table .= "<td td class='Hodiny'>{$value->PocetHodin}</td>";
+                $faktury_table .= "<td td class='Cena'>{$value->CenaHodiny}</td>";
+                $faktury_table .= "<td td class='Suma'>{$value->CelkovaSuma}</td>";
+                $faktury_table .= "<td td class='Zaplatena'>{$value->Zaplatena}</td>";
                 $faktury_table .= "<td>
                  <a href='" . base_url() . "Faktury/detail_faktury/{$value->idFaktury}'>
                     <button type = \"button\" class = \"btn btn-default btn-xs\">
