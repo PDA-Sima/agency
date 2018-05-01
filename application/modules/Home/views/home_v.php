@@ -142,10 +142,23 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <canvas id="myChart"></canvas>
                    /* $this->load->view($content_view); */
                 </div>
             </div>
         </div>
+
+        <script>
+            var myChart= document.activeElementById('myChart').getContext('2d');
+            var Chart1 = new Chart (myChart, {
+                type: 'bar',
+                data:{
+                    labels:[],
+                    dataset[]
+                },
+            }
+
+        </script>
 
 
         <footer class="footer">
@@ -184,5 +197,7 @@
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url();?>assets/admin/js/demo.js"></script>
+
+<script src="<?php echo base_url();?>https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
 </html>

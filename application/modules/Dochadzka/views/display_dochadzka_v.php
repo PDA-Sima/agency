@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="<?php echo base_url(); ?>Admin/addDochadzka" class="btn btn-primary">Pridať dochádzku</a>
+        <a href="<?php echo base_url(); ?>Admin/addDochadzka" class="btn btn-primary btn-fill">Pridať dochádzku</a>
         <br><br>
     </div>
 </div>

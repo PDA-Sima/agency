@@ -41,19 +41,19 @@ class Kategorie extends MY_Controller
                 $kategorie_table .= "<td class='Kategoria'>{$value->Kategoria}</td>";
                 $kategorie_table .= "<td>
                  <a href='" . base_url() . "Kategorie/detail_kategorie/{$value->idKategorie}'>
-                    <button type = \"button\" class = \"btn btn-default btn-xs\">
+                    <button type = \"button\" class = \"btn btn-default btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-search\"></span>
                     </button>
                  </a>
                   
                  <a href='" . base_url() . "Kategorie/edit_kategorie/{$value->idKategorie}'>
-                    <button type = \"button\" class = \"btn btn-info btn-xs\">
+                    <button type = \"button\" class = \"btn btn-info btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-pencil\"></span>
                     </button>
                  </a>
                  
                  <a href='" . base_url() . "Admin/delete_kategorie/{$value->idKategorie}'>
-                    <button type = \"button\" class = \"btn btn-danger btn-xs\">
+                    <button type = \"button\" class = \"btn btn-danger btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-remove\"></span>
                     </button>
                  </a>

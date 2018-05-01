@@ -41,19 +41,19 @@ class Ucastnici extends MY_Controller
             $ucastnici_table .= "<td td class='Telefon'>{$value->Telefon}</td>";
             $ucastnici_table .= "<td>
                 <a href='" . base_url() . "Ucastnici/detail_ucastnici/{$value->idUcastnika}'>
-                    <button type = \"button\" class = \"btn btn-default btn-xs\">
+                    <button type = \"button\" class = \"btn btn-default btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-search\"></span>
                     </button>
                  </a>
                   
                  <a href='" . base_url() . "Ucastnici/edit_ucastnici/{$value->idUcastnika}'>
-                    <button type = \"button\" class = \"btn btn-info btn-xs\">
+                    <button type = \"button\" class = \"btn btn-info btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-pencil\"></span>
                     </button>
                  </a>
                  
                  <a href='" . base_url() . "Ucastnici/delete_ucastnici/{$value->idUcastnika}'>
-                    <button type = \"button\" class = \"btn btn-danger btn-xs\">
+                    <button type = \"button\" class = \"btn btn-danger btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-remove\"></span>
                     </button>
                  </a>

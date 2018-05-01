@@ -27,8 +27,8 @@
                 </div>
 
                 <div class ="col-md-12">
-                    <button class="btn btn-danger btn-large">Odstrániť</button>
-                    <a href="<?php echo base_url();?>Admin/Ucastnici" class="btn btn">Späť</a>
+                    <button class="btn btn-danger btn-large btn-fill">Odstrániť</button>
+                    <a href="<?php echo base_url();?>Admin/Ucastnici" class="btn btn btn-fill">Späť</a>
                 </div>
             </div>
         </form>

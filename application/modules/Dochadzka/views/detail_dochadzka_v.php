@@ -31,7 +31,7 @@
                 </div>
 
                 <div class ="col-md-12">
-                    <a href="<?php echo base_url();?>Admin/Dochadzka" class="btn btn">Späť</a>
+                    <a href="<?php echo base_url();?>Admin/Dochadzka" class="btn btn btn-fill">Späť</a>
                 </div>
             </div>
         </form>

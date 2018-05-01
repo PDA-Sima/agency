@@ -43,19 +43,19 @@ class Dochadzka extends MY_Controller
                 $dochadzka_table .= "<td td class='Koniec'>{$value->Koniec}</td>";
                 $dochadzka_table .= "<td>
                 <a href='" . base_url() . "Dochadzka/detail_dochadzka/{$value->idHodiny}'>
-                    <button type = \"button\" class = \"btn btn-default btn-xs\">
+                    <button type = \"button\" class = \"btn btn-default btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-search\"></span>
                     </button>
                  </a>
                   
                  <a href='" . base_url() . "Dochadzka/edit_dochadzka/{$value->idHodiny}'>
-                    <button type = \"button\" class = \"btn btn-info btn-xs\">
+                    <button type = \"button\" class = \"btn btn-info btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-pencil\"></span>
                     </button>
                  </a>
                  
                  <a href='" . base_url() . "Dochadzka/delete_dochadzka/{$value->idHodiny}'>
-                    <button type = \"button\" class = \"btn btn-danger btn-xs\">
+                    <button type = \"button\" class = \"btn btn-danger btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-remove\"></span>
                     </button>
                  </a>

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="<?php echo base_url(); ?>Admin/addKategorie" class="btn btn-primary ">Pridať kategóriu</a>
+        <a href="<?php echo base_url(); ?>Admin/addKategorie" class="btn btn-primary btn-fill">Pridať kategóriu</a>
         <br><br>
     </div>
 </div>

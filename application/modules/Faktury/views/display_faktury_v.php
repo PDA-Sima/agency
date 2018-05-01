@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="<?php echo base_url(); ?>Admin/addFaktura" class="btn btn-primary">Pridať faktúru</a>
+        <a href="<?php echo base_url(); ?>Admin/addFaktura" class="btn btn-primary btn-fill">Pridať faktúru</a>
         <br><br>
     </div>
 </div>

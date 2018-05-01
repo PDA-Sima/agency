@@ -75,8 +75,8 @@
                 </div>
 
                 <div class="col-md-12">
-                    <button class="btn btn-primary btn-large">Uložiť</button>
-                    <a href="<?php echo base_url();?>Admin/Faktury" class="btn btn">Späť</a>
+                    <button class="btn btn-primary btn-large btn-fill">Uložiť</button>
+                    <a href="<?php echo base_url();?>Admin/Faktury" class="btn btn btn-fill">Späť</a>
                 </div>
             </div>
     </div>

@@ -41,19 +41,19 @@ class Lektori extends MY_Controller
                 $lektori_table .= "<td class='Lektori'>{$value->Lektor}</td>";
                 $lektori_table .= "<td>
                  <a href='" . base_url() . "Lektori/detail_lektor/{$value->idLektora}'>
-                    <button type = \"button\" class = \"btn btn-default btn-xs\">
+                    <button type = \"button\" class = \"btn btn-default btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-search\"></span>
                     </button>
                  </a>
                   
                  <a href='" . base_url() . "Lektori/edit_lektor/{$value->idLektora}'>
-                    <button type = \"button\" class = \"btn btn-info btn-xs\">
+                    <button type = \"button\" class = \"btn btn-info btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-pencil\"></span>
                     </button>
                  </a>
                  
                  <a href='" . base_url() . "Lektori/delete_lektor/{$value->idLektora}'>
-                    <button type = \"button\" class = \"btn btn-danger btn-xs\">
+                    <button type = \"button\" class = \"btn btn-danger btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-remove\"></span>
                     </button>
                  </a>

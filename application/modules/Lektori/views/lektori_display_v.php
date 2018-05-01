@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <a href="<?php echo base_url(); ?>Admin/addLektor" class="btn btn-primary ">Pridať lektora</a>
+        <a href="<?php echo base_url(); ?>Admin/addLektor" class="btn btn-primary btn-fill">Pridať lektora</a>
         <br><br>
     </div>
 </div>

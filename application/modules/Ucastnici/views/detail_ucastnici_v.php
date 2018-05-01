@@ -28,7 +28,7 @@
                 </div>
 
                 <div class ="col-md-12">
-                    <a href="<?php echo base_url();?>Admin/Ucastnici" class="btn btn">Späť</a>
+                    <a href="<?php echo base_url();?>Admin/Ucastnici" class="btn btn btn-fill">Späť</a>
                 </div>
             </div>
         </form>

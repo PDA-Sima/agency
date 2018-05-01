@@ -44,19 +44,19 @@ class Kurzy extends MY_Controller {
               $kurzy_table .= "<td td class='UrcenePreFirmy'>{$value->UrcenePreFirmy}</td>";
               $kurzy_table .= "<td>
                <a href='" . base_url() . "Kurzy/detail_kurzy/{$value->idKurzu}'>
-                    <button type = \"button\" class = \"btn btn-default btn-xs\">
+                    <button type = \"button\" class = \"btn btn-default btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-search\"></span>
                     </button>
                  </a>
                   
                  <a href='" . base_url() . "Kurzy/edit_kurzy/{$value->idKurzu}'>
-                    <button type = \"button\" class = \"btn btn-info btn-xs\">
+                    <button type = \"button\" class = \"btn btn-info btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-pencil\"></span>
                     </button>
                  </a>
                  
                  <a href='" . base_url() . "Kurzy/delete_kurzy/{$value->idKurzu}'>
-                    <button type = \"button\" class = \"btn btn-danger btn-xs\">
+                    <button type = \"button\" class = \"btn btn-danger btn-xs btn-fill\">
                         <span class = \"glyphicon glyphicon-remove\"></span>
                     </button>
                  </a>
