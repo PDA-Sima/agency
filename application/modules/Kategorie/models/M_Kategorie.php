@@ -43,6 +43,11 @@ class M_Kategorie extends CI_Model{
         $this->db->update('kategorie',$data);
     }
 
+    function get_data_graf1(){
+        $query =$this->db->query("SELECT kategorie.Kategoria AS Kategorie,COUNT(kurzy.Nazov) AS Pocet_kurzov FROM kategorie INNER JOIN kurzy ON kurzy.idKategorie=kategorie.idKategorie GROUP BY kategorie.Kategoria");
+        return $query->result();
+    }
+
 
 
 }

@@ -4,13 +4,13 @@ class Admin extends MY_Controller
 {
     function __construct(){
         parent::__construct();
+        $this->load->module(['home']);
         $this->load->module(['kurzy']);
         $this->load->module(['kategorie']);
         $this->load->module(['lektori']);
         $this->load->module(['ucastnici']);
-        $this->load->module(['Dochadzka']);
+        $this->load->module(['dochadzka']);
         $this->load->module(['faktury']);
-        $this->load->module(['home']);
     }
 
     function index(){
@@ -18,10 +18,8 @@ class Admin extends MY_Controller
     }
 
     function home(){
-        $this->home->home_template();
+        $this->home->call_home();
     }
-
-
 
     /*Kurzy*/
     function kurzy(){
