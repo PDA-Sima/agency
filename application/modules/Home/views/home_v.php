@@ -8,18 +8,48 @@
 <body>
 
 
-<table allign="center">
+<table align="center">
 
     <tr>
-        <td><canvas id="myChart4" width="450" height="450"></canvas>
+        <td><canvas id="myChart1" width="370" height="370"></canvas>
             <script>
-                var ctx = document.getElementById("myChart4");
-                var myChart4 = new Chart(ctx, {
+                var ctx = document.getElementById("myChart1");
+                var myChart1 = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [ <?php echo $graf1nazov ?> ],
+                        datasets: [{
+                            data: [<?php echo $graf1hodnoty ?>],
+                            backgroundColor: [
+                                'rgba(229, 76, 76, 0.73)',
+                                'rgba(229, 229, 76, 0.73)',
+                                'rgba(153, 229, 76, 0.73)',
+                                'rgba(76, 229, 229, 0.73)',
+                                'rgba(76, 153, 229, 0.73)'
+                            ],
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Počet kurzov na jednotlivé kategórie'
+                        }
+                    }
+                });
+            </script>
+        </td>
+
+        <td width="100"></td>
+
+        <td><canvas id="myChart2" width="600" height="450"></canvas>
+            <script>
+                var ctx = document.getElementById("myChart2");
+                var myChart2 = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: [ <?php echo $graf1nazov ?> ],
                         datasets: [{
-                            label: 'Počet kurzov na kategóriu',
+                            label: 'Prehľad počtu kurzov na kategóriu',
                             data: [<?php echo $graf1hodnoty ?>],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
@@ -50,6 +80,8 @@
                 });
             </script></td>
     </tr>
+
+
 </table>
 
 </body>

@@ -14,6 +14,8 @@ class Home extends MY_Controller
         $data['content_view'] = 'Home/home_v';
         $data['graf1nazov'] = $this->graf_jeden_nazov();
         $data['graf1hodnoty'] =$this->graf_jeden_hodnoty();
+        $data['graf1nazov'] = $this->graf_jeden_nazov();
+        $data['graf1hodnoty'] =$this->graf_jeden_hodnoty();
         $this->template->call_admin_template($data);
     }
 
@@ -49,4 +51,5 @@ class Home extends MY_Controller
                 }}}
         return $options;
     }
+
 }
