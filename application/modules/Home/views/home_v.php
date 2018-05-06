@@ -47,10 +47,10 @@
                 var myChart2 = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: [ <?php echo $graf1nazov ?> ],
+                        labels: [ <?php echo $graf2nazov ?> ],
                         datasets: [{
-                            label: 'Prehľad počtu kurzov na kategóriu',
-                            data: [<?php echo $graf1hodnoty ?>],
+                            label: 'Prehľad počtu kurzov jednotlivých lektorov',
+                            data: [<?php echo $graf2hodnoty ?>],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',

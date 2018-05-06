@@ -41,4 +41,9 @@ class M_Kurzy extends CI_Model {
         $this->db->where('idKurzu', $id);
         $this->db->update('kurzy',$data);
     }
+
+    function get_data_graf2(){
+        $query =$this->db->query("SELECT lektori.Lektor AS Lektori,COUNT(kurzy.Nazov) AS Pocet_kurzov FROM kurzy INNER JOIN lektori ON kurzy.idLektora=lektori.idLektora GROUP BY lektori.Lektor");
+        return $query->result();
+    }
 }
