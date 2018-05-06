@@ -2,7 +2,7 @@
 <div class="col-sm-5">
     <table align="center">
         <tr>
-            <td><canvas id="myChart1" height="400" width="400"></canvas>
+            <td><canvas id="myChart1" height="400" width="500"></canvas>
                 <script>
                     var ctx = document.getElementById("myChart1");
                     var myChart1 = new Chart(ctx, {
@@ -23,7 +23,7 @@
                     options: {
                         title: {
                             display: true,
-                            text: 'Počet kurzov na jednotlivé kategórie'
+                            text: 'Počet kurzov v jednotlivých kategóriách'
                         }
                     }
                 });
@@ -45,7 +45,7 @@
                     data: {
                         labels: [ <?php echo $graf2nazov ?> ],
                         datasets: [{
-                            label: 'Prehľad počtu kurzov jednotlivých lektorov',
+                            label: 'Počet kurzov lektora',
                             data: [<?php echo $graf2hodnoty ?>],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
@@ -81,10 +81,64 @@
 <br><br><br>
 
 <div class="row">
-    <div class="col-md-12">
-    <table align="center">
-    <tr>
-        <td><canvas id="myChart3" width="800" height="400"></canvas>
+    <div class="col-sm-5">
+        <table align="center">
+        <tr>
+            <td>
+                <canvas id="myChart4" height="400" width="500"></canvas>
+                <script>
+                    var ctx = document.getElementById("myChart4");
+                    var myChart4 = new Chart(ctx, {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: [ <?php echo $graf4nazov ?> ],
+                            datasets: [{
+                                label: 'Počet kurzov',
+                                data: [<?php echo $graf4hodnoty ?>],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            title: {
+                                display: true,
+                                text: 'Najaktívnejší žiaci'
+                            },
+                            scales: {
+                                xAxes: [{
+                                    ticks: {
+                                        min: 0.0
+
+                                    }
+                                }],
+                                yAxes: [{
+                                    stacked: true
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="col-sm-7">
+        <table align="center">
+        <tr>
+        <td>
+            <canvas id="myChart3" width="700" height="400"></canvas>
             <script>
                 var ctx = document.getElementById("myChart3");
                 var myChart3 = new Chart(ctx, {
@@ -92,7 +146,7 @@
                     data: {
                         labels: [ <?php echo $graf3nazov ?> ],
                         datasets: [{
-                            label: 'Počet žiakov v daný dátum',
+                            label: 'Počet žiakov v jednotlivých dňoch výučby',
                             data: [<?php echo $graf3hodnoty ?>],
                             backgroundColor: [
                                 'rgba(229, 76, 76, 0.73)',
@@ -107,9 +161,9 @@
                     }
                 });
             </script>
-        </td>
-    </tr>
-    </table>
+            </td>
+        </tr>
+        </table>
     </div>
 </div>
 

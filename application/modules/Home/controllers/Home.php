@@ -18,6 +18,8 @@ class Home extends MY_Controller
         $data['graf2hodnoty'] =$this->graf_druhy_hodnoty();
         $data['graf3nazov'] = $this->graf_treti_nazov();
         $data['graf3hodnoty'] =$this->graf_treti_hodnoty();
+        $data['graf4nazov'] = $this->graf_stvrty_nazov();
+        $data['graf4hodnoty'] =$this->graf_stvrty_hodnoty();
         $this->template->call_admin_template($data);
     }
 
@@ -116,6 +118,39 @@ class Home extends MY_Controller
                     $options .= " $value->Pocet_ziakov";
                 } else {
                     $options .= " $value->Pocet_ziakov,";
+                }}}
+        return $options;
+    }
+
+    function graf_stvrty_nazov(){
+        $this->load->model('Dochadzka/M_Dochadzka');
+        $data =$this->M_Dochadzka->get_data_graf4();
+        $options="" ;
+        $counter =0;
+        $counters= count($data);
+        if(count($data)) {
+            foreach ($data as $key => $value) {
+                $counter = $counter + 1;
+                if ($counter == $counters) {
+                    $options .= "\"$value->Meno\"";
+                } else {
+                    $options .= "\"$value->Meno\",";
+                }}}
+        return $options;
+    }
+    function graf_stvrty_hodnoty(){
+        $this->load->model('Dochadzka/M_Dochadzka');
+        $data =$this->M_Dochadzka->get_data_graf4();
+        $options="" ;
+        $counter =0;
+        $counters= count($data);
+        if(count($data)) {
+            foreach ($data as $key => $value) {
+                $counter = $counter + 1;
+                if ($counter == $counters) {
+                    $options .= " $value->Pocet";
+                } else {
+                    $options .= " $value->Pocet,";
                 }}}
         return $options;
     }

@@ -47,4 +47,10 @@ class M_Dochadzka extends CI_Model{
         $query =$this->db->query("SELECT hodinykurzu.Datum, COUNT(ucastnici.Meno) AS Pocet_ziakov FROM `hodinykurzu` INNER JOIN ucastnici ON ucastnici.idUcastnika=hodinykurzu.idUcastnika GROUP BY Datum");
         return $query->result();
     }
+
+    function get_data_graf4(){
+        $query =$this->db->query("SELECT ucastnici.Meno AS Meno, COUNT(DISTINCT(kurzy.Nazov)) AS Pocet FROM hodinykurzu INNER JOIN ucastnici ON ucastnici.idUcastnika=hodinykurzu.idUcastnika INNER JOIN kurzy
+                                  ON kurzy.idKurzu=hodinykurzu.idKurzu GROUP BY ucastnici.Meno ORDER BY Pocet DESC LIMIT 4");
+        return $query->result();
+    }
 }
