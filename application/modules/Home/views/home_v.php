@@ -45,7 +45,7 @@
                     data: {
                         labels: [ <?php echo $graf2nazov ?> ],
                         datasets: [{
-                            label: 'Počet kurzov lektora',
+                            label: 'Počet kurzov na lektora',
                             data: [<?php echo $graf2hodnoty ?>],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
